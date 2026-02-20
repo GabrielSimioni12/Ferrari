@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Models Catalog | Elite Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#ff0000",
+                "background-light": "#ffffff",
+                "background-dark": "#000000",
+              },
+              fontFamily: {
+                "display": ["Manrope", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "0rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Global Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-12 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-10">
+<a class="flex items-center gap-2 group" href="#">
+<span class="material-symbols-outlined text-primary text-3xl">stat_3</span>
+<h1 class="text-xl font-extrabold tracking-[0.2em] uppercase">Ferrari</h1>
+</a>
+<nav class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-widest text-slate-600 dark:text-slate-400">
+<a class="text-primary hover:text-primary/80 transition-colors" href="#">Models</a>
+<a class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Racing</a>
+<a class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Heritage</a>
+<a class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Experience</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-slate-100 dark:bg-slate-900 rounded-lg px-3 py-1.5 border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-slate-400 text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-slate-500" placeholder="Search Models..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-10">
+<!-- Category Filters -->
+<div class="flex items-center gap-3 overflow-x-auto no-scrollbar pb-8">
+<button class="flex items-center gap-2 shrink-0 px-6 py-2 rounded-full bg-primary text-white text-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">directions_car</span>
+                All Models
+            </button>
+<button class="flex items-center gap-2 shrink-0 px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold uppercase tracking-wider transition-all">
+<span class="material-symbols-outlined text-lg">speed</span>
+                Sports
+            </button>
+<button class="flex items-center gap-2 shrink-0 px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold uppercase tracking-wider transition-all">
+<span class="material-symbols-outlined text-lg">navigation</span>
+                GT
+            </button>
+<button class="flex items-center gap-2 shrink-0 px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold uppercase tracking-wider transition-all">
+<span class="material-symbols-outlined text-lg">stars</span>
+                Special Series
+            </button>
+<button class="flex items-center gap-2 shrink-0 px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold uppercase tracking-wider transition-all">
+<span class="material-symbols-outlined text-lg">workspace_premium</span>
+                Icona
+            </button>
+</div>
+<!-- Catalog Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-100 dark:bg-slate-900">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Side profile of a red Ferrari SF90 Stradale supercar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPOc0H0Eai5Wy99uuWxVfKGtns1Wi16J61o1-Bj-0x0c-iWFHdVianFg142jvZI4aqT_RZ5M4zzPh-oWosuO4CucxV26UdPD4E39nm6IqU_inWrk50gIdxSrzIvJ9bw0QSDTfMZoWi_XvFB08gLUDhmxnYHeU-Q6rgnIvGy0VyDz2nNN4-GxL25LuBnIJ7ftH4Y8kK4I9ghXF19xcB3qHVuFaVIANkYmtGahxwM3TH617ciNPQOknb686GuPKHh-GWG2yLo1l_wENV');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="mt-4 flex justify-between items-start">
+<div>
+<h3 class="text-xl font-extrabold uppercase tracking-tight group-hover:text-primary transition-colors">SF90 Stradale</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1 uppercase tracking-widest font-semibold">The Hybrid Benchmark</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-slate-500 uppercase font-bold">Top Speed</p>
+<p class="text-lg font-bold text-slate-900 dark:text-slate-100">340 km/h</p><p class="text-[10px] text-primary uppercase font-bold mt-1">From $511,000</p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">timer</span> 0-100: 2.5s</span>
+<span class="flex items-center gap-1 group-hover:text-primary transition-colors">View Details <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-100 dark:bg-slate-900">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Modern yellow sports car front view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCizluK-lQHBsevRlOG6yuNuMs89OgVlkzjhnbeEwwAxrkUURrqSbfp0a6D3MftVOA4XkFhiyiPiSq8s1mTfD-u-nk9-WxggVe4BOAMkALCFE6ex1bb971YzYCvuzLpcyBgIkbTEWSnTNc3abfFWLtNHqoJ-RU6GG2sRExxRqmCL94hf1FHB0WL1m0XKnrgxQix_qfpZRsHLYZSQRrrThvH13JHwYOQxGIgYyRqGswBpeUSlWy9airIj0WtUU1XS_a-CmjJS4jpLHqf');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="mt-4 flex justify-between items-start">
+<div>
+<h3 class="text-xl font-extrabold uppercase tracking-tight group-hover:text-primary transition-colors">F8 Tributo</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1 uppercase tracking-widest font-semibold">The Heart of V8</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-slate-500 uppercase font-bold">Top Speed</p>
+<p class="text-lg font-bold text-slate-900 dark:text-slate-100">340 km/h</p><p class="text-[10px] text-primary uppercase font-bold mt-1">From $280,000</p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">timer</span> 0-100: 2.9s</span>
+<span class="flex items-center gap-1 group-hover:text-primary transition-colors">View Details <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-100 dark:bg-slate-900">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Grey high-performance grand tourer car" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQ9IE__ZCdxnUaR67KkPxj_ad9c8pZ_zr_XdEDQuQfgSNI2g-NulWTU6oeY4Zy6ekpjA6jRMH-DLFq2ZnlinJmLC1m1eFmjO3FrBJn8zxbVPeRWgnLHbwHFkOT1SD8fQVyOtXxEoB6hyshUdkf26GO1RyNv-sYV1hx9aNEDRR7Po4oEGynyiYvQHdAoReuntx6utpgZ_AXJVmZM72YNJp95cW3OKX1JTVuGWd_lFIDNRqqygy8teK8JcOxhDdM8VKPg21HegV2-XMU');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="mt-4 flex justify-between items-start">
+<div>
+<h3 class="text-xl font-extrabold uppercase tracking-tight group-hover:text-primary transition-colors">812 GTS</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1 uppercase tracking-widest font-semibold">Unmatched V12 Open-Air</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-slate-500 uppercase font-bold">Top Speed</p>
+<p class="text-lg font-bold text-slate-900 dark:text-slate-100">340 km/h</p><p class="text-[10px] text-primary uppercase font-bold mt-1">From $404,000</p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">timer</span> 0-100: 3.0s</span>
+<span class="flex items-center gap-1 group-hover:text-primary transition-colors">View Details <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+</div>
+</div>
+</div>
+<!-- Detail Section (Simulated Spotlight for 296 GTB) -->
+<section class="mt-20 pt-16 border-t border-slate-200/10">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.2em] mb-6 rounded">Detail View</span>
+<h2 class="text-5xl lg:text-7xl font-extrabold uppercase tracking-tighter mb-4 leading-none">296 GTB</h2>
+<p class="text-2xl text-slate-500 dark:text-slate-400 font-light mb-8 italic">Defining Fun to Drive</p>
+<div class="grid grid-cols-2 gap-y-10 gap-x-8 mb-12">
+<div class="border-l-2 border-primary pl-4">
+<p class="text-xs text-slate-500 uppercase tracking-widest font-bold mb-1">Engine</p>
+<p class="text-xl font-extrabold uppercase">V6 - 120° Turbo</p>
+</div>
+<div class="border-l-2 border-primary pl-4">
+<p class="text-xs text-slate-500 uppercase tracking-widest font-bold mb-1">Max Power</p>
+<p class="text-xl font-extrabold uppercase">830 CV</p>
+</div>
+<div class="border-l-2 border-primary pl-4">
+<p class="text-xs text-slate-500 uppercase tracking-widest font-bold mb-1">Max Torque</p>
+<p class="text-xl font-extrabold uppercase">740 NM</p>
+</div>
+<div class="border-l-2 border-primary pl-4">
+<p class="text-xs text-slate-500 uppercase tracking-widest font-bold mb-1">Acceleration</p>
+<p class="text-xl font-extrabold uppercase">2.9s (0-100 km/h)</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-lg font-bold uppercase tracking-widest text-sm hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 group">
+                            Open 3D Configurator
+                            <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">view_in_ar</span>
+</button>
+<button class="flex items-center gap-3 px-8 py-4 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg font-bold uppercase tracking-widest text-sm hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">
+                            Download Brochure
+                            <span class="material-symbols-outlined text-xl">download</span>
+</button>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-4">
+<div class="relative rounded-2xl overflow-hidden aspect-video bg-slate-900 shadow-2xl">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Studio shot of 296 GTB in a vibrant red" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlCUO06rBcjwCcwwukbzpkEb7pIXe9iYfjw79PM8u_u-HCKqNQEGvA5TigYqWbHhkO448NC3QYfEl7lRev0_74v8zsr3KNYeqobvCuO1IMy7_AeVEYB67QzjuYlp7pbdDsfxWEt7HJrLZ1a12jUCyR3wSYr_7arTLsuX-brTSqEjckAslbO33XGowAYiB9dM0ZZf6L8cN8azLPuOuc3B7sZ_qu21HnP7jwC-u54MTvCalgQzMXuiNJr3wXyXG4IdxyiYqZ7sNW1bpO');"></div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="aspect-video rounded-xl overflow-hidden bg-slate-800">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up of sports car headlight" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHTzehx05U6n5QL1oU8rIVg8ClQDfuBrW1tM4cQ-Y4rZMEHNYJvzJLqoejwmXGoNf_TQ8jEMO6G5d3-OuLpADLZYJ-1V5UL4ig59Z1X-f6GJghtPC0GU1rR4gZBBm-Gd_lHKuBGajlH7zGurpGjSQgZZcTLt4vi2AQJV-6sSbL8klGvd0J1qyD3ik5UlyLqTP7nAo3OzKYpdslXg0W3cbMAJDioZJxzLyMTichVYNrHPEMyQMw8eGYpWCW7Yx93W4YVFOvveF2cuCq');"></div>
+</div>
+<div class="aspect-video rounded-xl overflow-hidden bg-slate-800">
+<div class="w-full h-full bg-cover bg-center" data-alt="Luxurious car interior and steering wheel" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA02zVyQH-_SkDBN2Vmuj77b7wiUb_OzhMDi5eKddt0rmpPABWHXuk_JRzsUR0b1Urc8rGPmBtV5iJemLZAnIi7-_R9oufsKnvnKRjv3hr5kXGBADNPC5v5HobsrCRWrKkeERw15Zt4KzOQrA3MEk7wmVAECZ8CY5GC887zfGvFccTfZF3EhHKCtp0PaJc9d0KnGQHQivQFrZxbvZzFtMaZmTzDpucmnZ3u_73RIgnpZNFNlMaI1RmvXBYFOXeAUTKmAW8Ge2mS5GD1');"></div>
+</div>
+<div class="aspect-video rounded-xl overflow-hidden bg-slate-800">
+<div class="w-full h-full bg-cover bg-center" data-alt="Rear view and exhaust pipes of a performance car" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNi-isQY-HpPinz5R8LtcD90EtMrRRvBRRSMJEkVSy-5Um0TxuEXwq1JnzD62PyDlnOKkBCvmDKvcgR2ql9vQKtj8JuM4N1AanslSHuqQ0SgxoA3_l18Z3oBughQtHTbis3fBG4obNlArW9pKK6i2JVhqfsUCi83xTrDHirsuAi3jTYEULJsDpGi0U9mz9OR8fKYyRmZZMt7hACEkI3HCgv1r963d_uQCN7Xpt8ovb7KflkfVZfagW1GxPRFbVfk27dKRoF4cdTk4r');"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Innovation Highlights -->
+<section class="mt-32">
+<h3 class="text-3xl font-extrabold uppercase tracking-tight mb-12">Innovation &amp; Engineering</h3>
+<div class="grid md:grid-cols-4 gap-6">
+<div class="flex flex-col gap-4 p-6 rounded-xl bg-slate-100 dark:bg-slate-900 border border-transparent hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">air</span>
+<h4 class="font-bold text-lg uppercase tracking-tight">Aerodynamics</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Sculpted for speed, minimizing drag while maximizing downforce at every curve.</p>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-xl bg-slate-100 dark:bg-slate-900 border border-transparent hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">handyman</span>
+<h4 class="font-bold text-lg uppercase tracking-tight">Craftsmanship</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Hand-stitched interiors using the finest sustainable leathers and carbon composite materials.</p>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-xl bg-slate-100 dark:bg-slate-900 border border-transparent hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+<h4 class="font-bold text-lg uppercase tracking-tight">Power Unit</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Next-generation hybrid systems delivering instant torque and track-ready endurance.</p>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-xl bg-slate-100 dark:bg-slate-900 border border-transparent hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">draw</span>
+<h4 class="font-bold text-lg uppercase tracking-tight">Design DNA</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Timeless aesthetics meeting futuristic silhouettes to define the next era of motoring.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-20 border-t border-slate-200/10 bg-slate-100 dark:bg-background-dark py-12 px-6 md:px-12">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">stat_3</span>
+<p class="font-extrabold uppercase tracking-[0.2em] text-lg">Ferrari</p>
+</div>
+<div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Cookie Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Legal</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">location_on</span>
+</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-10 text-center text-slate-500 text-[10px] uppercase tracking-[0.3em]">
+            © 2024 Elite Motors International. All Rights Reserved.
+        </div>
+</footer>
+</body></html>
