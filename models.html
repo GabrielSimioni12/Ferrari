@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
     <script>
         tailwind.config = {
           darkMode: "class",
@@ -22,6 +23,7 @@
           },
         }
     </script>
+
     <style>
         body { font-family: 'Manrope', sans-serif; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -29,6 +31,7 @@
         .model-card.hidden { display: none; }
     </style>
 </head>
+
 <body class="bg-background-dark text-slate-100 font-display transition-all duration-500">
 
 <header class="sticky top-0 z-50 w-full border-b border-white/5 bg-background-dark/80 backdrop-blur-md px-6 md:px-12 py-4">
@@ -44,144 +47,195 @@
                 <a class="hover:text-white transition-colors" href="#">Racing</a>
             </nav>
         </div>
-        
+
         <div class="flex items-center gap-6">
             <div class="hidden lg:flex items-center bg-white/5 rounded-full px-4 py-2 border border-white/10">
                 <span class="material-symbols-outlined text-slate-400 text-xl">search</span>
                 <input id="carSearch" class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-slate-500 text-white" placeholder="Search Models..." type="text"/>
-            </div>
-            <div class="flex items-center gap-4">
-                <button class="p-2 hover:bg-white/5 rounded-full"><span class="material-symbols-outlined">favorite</span></button>
-                <button class="p-2 hover:bg-white/5 rounded-full"><span class="material-symbols-outlined">person</span></button>
             </div>
         </div>
     </div>
 </header>
 
 <main class="max-w-7xl mx-auto px-6 md:px-12 py-10">
+
     <div class="flex items-center gap-3 overflow-x-auto no-scrollbar pb-8" id="filterContainer">
-        <button data-filter="all" class="filter-btn flex items-center gap-2 shrink-0 px-6 py-2 rounded-full bg-primary text-white text-sm font-bold uppercase tracking-wider">
-            All Models
-        </button>
-        <button data-filter="sports" class="filter-btn flex items-center gap-2 shrink-0 px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 text-sm font-bold uppercase tracking-wider transition-all">
-            Sports
-        </button>
-        <button data-filter="gt" class="filter-btn flex items-center gap-2 shrink-0 px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 text-sm font-bold uppercase tracking-wider transition-all">
-            GT
-        </button>
-        <button data-filter="special" class="filter-btn flex items-center gap-2 shrink-0 px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 text-sm font-bold uppercase tracking-wider transition-all">
-            Special Series
-        </button>
+        <button data-filter="all" class="filter-btn px-6 py-2 rounded-full bg-primary text-white text-sm font-bold uppercase tracking-wider">All Models</button>
+        <button data-filter="sports" class="filter-btn px-6 py-2 rounded-full bg-white/5 text-slate-400 text-sm font-bold uppercase tracking-wider">Sports</button>
+        <button data-filter="gt" class="filter-btn px-6 py-2 rounded-full bg-white/5 text-slate-400 text-sm font-bold uppercase tracking-wider">GT</button>
+        <button data-filter="special" class="filter-btn px-6 py-2 rounded-full bg-white/5 text-slate-400 text-sm font-bold uppercase tracking-wider">Special Series</button>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="catalogGrid">
-        <div class="model-card group cursor-pointer" data-category="sports" data-name="sf90 stradale">
+
+        <!-- Ferrari01 -->
+        <div class="model-card group cursor-pointer" data-category="sports" data-name="ferrari01">
             <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
-                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&q=80&w=800');"></div>
+                <img src="images/Models/image.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             </div>
-            <div class="mt-4 flex justify-between items-start">
-                <div>
-                    <h3 class="text-xl font-extrabold uppercase tracking-tight group-hover:text-primary transition-colors">SF90 Stradale</h3>
-                    <p class="text-slate-500 text-sm mt-1 uppercase tracking-widest font-semibold">The Hybrid Benchmark</p>
-                </div>
-                <div class="text-right">
-                    <p class="text-xs text-slate-500 uppercase font-bold">Top Speed</p>
-                    <p class="text-lg font-bold">340 km/h</p>
-                </div>
-            </div>
-            <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-slate-500">
-                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">timer</span> 0-100: 2.5s</span>
-                <span class="text-primary">View Details →</span>
-            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari01</h3>
         </div>
 
-        <div class="model-card group cursor-pointer" data-category="gt" data-name="roma spider">
+        <!-- Ferrari02 -->
+        <div class="model-card group cursor-pointer" data-category="gt" data-name="ferrari02">
             <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
-                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=800');"></div>
+                <img src="images/Models/image copy.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             </div>
-            <div class="mt-4 flex justify-between items-start">
-                <div>
-                    <h3 class="text-xl font-extrabold uppercase tracking-tight group-hover:text-primary transition-colors">Roma Spider</h3>
-                    <p class="text-slate-500 text-sm mt-1 uppercase tracking-widest font-semibold">La Nuova Dolce Vita</p>
-                </div>
-                <div class="text-right">
-                    <p class="text-xs text-slate-500 uppercase font-bold">Top Speed</p>
-                    <p class="text-lg font-bold">320 km/h</p>
-                </div>
-            </div>
-            <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-slate-500">
-                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">timer</span> 0-100: 3.4s</span>
-                <span class="text-primary">View Details →</span>
-            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari02</h3>
         </div>
 
-        <div class="model-card group cursor-pointer" data-category="special" data-name="812 gts">
+        <!-- Ferrari03 -->
+        <div class="model-card group cursor-pointer" data-category="special" data-name="ferrari03">
             <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
-                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1617135038964-b9470ac73c24?auto=format&fit=crop&q=80&w=800');"></div>
+                <img src="images/Models/image copy 2.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             </div>
-            <div class="mt-4 flex justify-between items-start">
-                <div>
-                    <h3 class="text-xl font-extrabold uppercase tracking-tight group-hover:text-primary transition-colors">812 GTS</h3>
-                    <p class="text-slate-500 text-sm mt-1 uppercase tracking-widest font-semibold">Pure V12 Emotion</p>
-                </div>
-                <div class="text-right">
-                    <p class="text-xs text-slate-500 uppercase font-bold">Top Speed</p>
-                    <p class="text-lg font-bold">340 km/h</p>
-                </div>
-            </div>
-            <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-slate-500">
-                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">timer</span> 0-100: 3.0s</span>
-                <span class="text-primary">View Details →</span>
-            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari03</h3>
         </div>
+
+        <!-- Ferrari04 -->
+        <div class="model-card group cursor-pointer" data-category="sports" data-name="ferrari04">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 3.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari04</h3>
+        </div>
+
+        <!-- Ferrari05 -->
+        <div class="model-card group cursor-pointer" data-category="gt" data-name="ferrari05">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 4.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari05</h3>
+        </div>
+
+        <!-- Ferrari06 -->
+        <div class="model-card group cursor-pointer" data-category="special" data-name="ferrari06">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 5.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari06</h3>
+        </div>
+
+        <!-- Ferrari07 -->
+        <div class="model-card group cursor-pointer" data-category="sports" data-name="ferrari07">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 6.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari07</h3>
+        </div>
+
+        <!-- Ferrari08 -->
+        <div class="model-card group cursor-pointer" data-category="gt" data-name="ferrari08">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 7.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari08</h3>
+        </div>
+
+         <!-- Ferrari08 -->
+        <div class="model-card group cursor-pointer" data-category="gt" data-name="ferrari08">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 11.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari08</h3>
+        </div>
+
+         <!-- Ferrari08 -->
+        <div class="model-card group cursor-pointer" data-category="gt" data-name="ferrari08">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 10.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari08</h3>
+        </div>
+
+         <!-- Ferrari08 -->
+        <div class="model-card group cursor-pointer" data-category="gt" data-name="ferrari08">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 9.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari08</h3>
+        </div>
+
+         <!-- Ferrari08 -->
+        <div class="model-card group cursor-pointer" data-category="gt" data-name="ferrari08">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 8.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari08</h3>
+        </div>
+
+         <!-- Ferrari08 -->
+        <div class="model-card group cursor-pointer" data-category="gt" data-name="ferrari08">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 12.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari08</h3>
+        </div>
+
+        <!-- Ferrari08 -->
+        <div class="model-card group cursor-pointer" data-category="gt" data-name="ferrari08">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 13.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari08</h3>
+        </div>
+
+        <!-- Ferrari08 -->
+        <div class="model-card group cursor-pointer" data-category="gt" data-name="ferrari08">
+            <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                <img src="images/Models/image copy 5.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold uppercase group-hover:text-primary transition-colors">Ferrari08</h3>
+        </div>
+
+        
+
     </div>
 </main>
 
 <script>
-    // 1. Lógica de Filtro por Categoria
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const modelCards = document.querySelectorAll('.model-card');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const modelCards = document.querySelectorAll('.model-card');
 
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Estilo dos botões
-            filterButtons.forEach(b => b.classList.remove('bg-primary', 'text-white'));
-            filterButtons.forEach(b => b.classList.add('bg-white/5', 'text-slate-400'));
-            btn.classList.add('bg-primary', 'text-white');
-            btn.classList.remove('bg-white/5', 'text-slate-400');
-
-            const filter = btn.getAttribute('data-filter');
-
-            modelCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+            b.classList.remove('bg-primary','text-white');
+            b.classList.add('bg-white/5','text-slate-400');
         });
-    });
+        btn.classList.add('bg-primary','text-white');
+        btn.classList.remove('bg-white/5','text-slate-400');
 
-    // 2. Lógica de Pesquisa em Tempo Real
-    const searchInput = document.getElementById('carSearch');
-    searchInput.addEventListener('input', (e) => {
-        const value = e.target.value.toLowerCase();
+        const filter = btn.getAttribute('data-filter');
+
         modelCards.forEach(card => {
-            const name = card.getAttribute('data-name').toLowerCase();
-            if (name.includes(value)) {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
                 card.classList.remove('hidden');
             } else {
                 card.classList.add('hidden');
             }
         });
     });
+});
 
-    // 3. Feedback Visual nos Cards
+const searchInput = document.getElementById('carSearch');
+searchInput.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase();
     modelCards.forEach(card => {
-        card.addEventListener('click', () => {
-            alert("Acessando detalhes do " + card.getAttribute('data-name').toUpperCase());
-        });
+        const name = card.getAttribute('data-name').toLowerCase();
+        if (name.includes(value)) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
     });
+});
+
+modelCards.forEach(card => {
+    card.addEventListener('click', () => {
+        alert("Acessando detalhes do " + card.getAttribute('data-name').toUpperCase());
+    });
+});
 </script>
 
 </body>

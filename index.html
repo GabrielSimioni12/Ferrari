@@ -31,142 +31,98 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="bg-background-dark text-slate-100 font-display transition-colors duration-300 overflow-x-hidden">
+<body class="bg-background-dark text-slate-100 font-display overflow-x-hidden">
 
 <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-white/5 bg-transparent">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div class="flex items-center gap-3">
-            <div class="text-primary size-8">
-                <span class="material-symbols-outlined text-3xl">stat_3</span>
-            </div>
+            <div class="text-primary size-8"><span class="material-symbols-outlined text-3xl">stat_3</span></div>
             <h2 class="text-xl font-extrabold tracking-tighter uppercase italic">Ferrari</h2>
         </div>
         <nav class="hidden md:flex items-center gap-10">
-            <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="models.html">Models</a>
-            <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="#tech">Engineering</a>
+            <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="#">Models</a>
             <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="locator.html">Locator</a>
             <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="checkout.html">Financing</a>
         </nav>
-        <div class="flex items-center gap-6">
-            <a href="checkout.html" class="hidden lg:flex bg-primary hover:bg-red-700 text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-3 rounded-sm transition-all active:scale-95">
-                Configure Yours
-            </a>
-        </div>
+        <a href="checkout.html" class="bg-primary hover:bg-red-700 text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-3 rounded-sm transition-all">Configure Yours</a>
     </div>
 </header>
 
 <section class="relative min-h-screen flex items-end overflow-hidden">
     <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent z-10"></div>
-        <img class="w-full h-full object-cover scale-105 animate-[pulse_10s_infinite]" src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&q=80&w=2000" alt="Ferrari SF90">
+        <img class="w-full h-full object-cover animate-[pulse_10s_infinite]" src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&q=80&w=2000" alt="Ferrari SF90">
     </div>
-    
     <div class="relative z-20 max-w-7xl mx-auto px-6 w-full pb-24 reveal">
         <div class="max-w-3xl space-y-6">
-            <div class="flex items-center gap-4">
-                <span class="h-[2px] w-12 bg-primary"></span>
-                <span class="text-primary text-[10px] font-bold tracking-[0.4em] uppercase">V12 Naturally Aspirated</span>
-            </div>
-            <h1 class="text-6xl md:text-9xl font-extrabold leading-[0.85] tracking-tighter text-white uppercase italic">
-                The Essence <br/> of <span class="text-primary">Speed</span>
-            </h1>
-            <p class="text-lg text-slate-400 max-w-xl font-light leading-relaxed">
-                Defining the pinnacle of Italian engineering. Experience the raw emotion of performance without compromise at your nearest dealer.
-            </p>
-            <div class="flex flex-wrap gap-4 pt-6">
-                <a href="checkout.html" class="flex items-center bg-primary hover:bg-red-700 text-white text-[10px] font-bold uppercase tracking-widest px-10 py-5 rounded-sm transition-all group active:scale-95">
-                    <span>Configure Yours</span>
-                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-                <a href="locator.html" class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest px-10 py-5 rounded-sm border border-white/10 transition-all active:scale-95">
-                    Find a Dealer
-                </a>
-            </div>
+            <div class="flex items-center gap-4"><span class="h-[2px] w-12 bg-primary"></span><span class="text-primary text-[10px] font-bold tracking-[0.4em] uppercase">V12 Naturally Aspirated</span></div>
+            <h1 class="text-6xl md:text-9xl font-extrabold leading-[0.85] tracking-tighter text-white uppercase italic">The Essence <br/> of <span class="text-primary">Speed</span></h1>
+            <p class="text-lg text-slate-400 max-w-xl font-light">Italian engineering at its peak. Explore our collection below.</p>
         </div>
     </div>
 </section>
 
-<section id="models" class="py-32 bg-background-dark overflow-hidden">
+<section class="py-32 bg-background-dark">
     <div class="max-w-7xl mx-auto px-6 mb-16 flex justify-between items-end reveal">
         <div>
             <h3 class="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-2">The Collection</h3>
             <h2 class="text-5xl font-bold tracking-tighter text-white italic uppercase">Current Stable</h2>
         </div>
-        <div class="flex gap-4 items-center">
-            <a href="models.html" class="text-[10px] font-bold uppercase tracking-widest border-b border-primary pb-1 hover:text-primary transition-all">View All Models</a>
-            <div class="flex gap-2">
-                <button id="prevBtn" class="size-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all active:scale-90"><span class="material-symbols-outlined">chevron_left</span></button>
-                <button id="nextBtn" class="size-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all active:scale-90"><span class="material-symbols-outlined">chevron_right</span></button>
-            </div>
+        <div class="flex gap-2">
+            <button id="prevBtn" class="size-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
+            <button id="nextBtn" class="size-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
         </div>
     </div>
 
     <div id="model-carousel" class="flex overflow-x-auto hide-scrollbar px-6 gap-8 snap-x scroll-smooth">
-        <div class="min-w-[400px] snap-start group cursor-pointer reveal" onclick="window.location.href='checkout.html'">
-            <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark mb-6">
-                <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800" alt="Ferrari 488">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
-                <div class="absolute bottom-8 left-8 right-8 flex justify-between items-end">
-                    <div class="text-white">
-                        <p class="text-[10px] uppercase tracking-[0.3em] text-primary font-bold mb-2">Hybrid Performance</p>
-                        <h4 class="text-3xl font-black italic uppercase">SF90 Stradale</h4>
-                    </div>
-                    <span class="text-white font-bold bg-primary px-3 py-1 text-sm italic">1000 CV</span>
+        <div class="min-w-[400px] snap-start group cursor-pointer reveal" onclick="window.location.href='checkout.html?model=SF90%20Stradale&price=511000'">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <p class="text-[10px] uppercase text-primary font-bold">Hybrid</p>
+                    <h4 class="text-3xl font-black italic uppercase">SF90 Stradale</h4>
+                    <p class="text-sm opacity-70 mt-2">Starting at $511,000</p>
                 </div>
             </div>
         </div>
-        <div class="min-w-[400px] snap-start group cursor-pointer reveal" onclick="window.location.href='models.html'">
-            <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark mb-6">
-                <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=800" alt="Ferrari Roma">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
-                <div class="absolute bottom-8 left-8 right-8 flex justify-between items-end">
-                    <div class="text-white">
-                        <p class="text-[10px] uppercase tracking-[0.3em] text-primary font-bold mb-2">La Nuova Dolce Vita</p>
-                        <h4 class="text-3xl font-black italic uppercase">Roma Spider</h4>
-                    </div>
-                    <span class="text-white font-bold bg-primary px-3 py-1 text-sm italic">620 CV</span>
+        <div class="min-w-[400px] snap-start group cursor-pointer reveal" onclick="window.location.href='checkout.html?model=Purosangue%20V12&price=398000'">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1678912808225-8e474ca0472f?auto=format&fit=crop&q=80&w=800">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <p class="text-[10px] uppercase text-primary font-bold">SUV</p>
+                    <h4 class="text-3xl font-black italic uppercase">Purosangue</h4>
+                    <p class="text-sm opacity-70 mt-2">Starting at $398,000</p>
+                </div>
+            </div>
+        </div>
+        <div class="min-w-[400px] snap-start group cursor-pointer reveal" onclick="window.location.href='checkout.html?model=296%20GTB&price=322000'">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1656447816035-71578e8574fc?auto=format&fit=crop&q=80&w=800">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <p class="text-[10px] uppercase text-primary font-bold">V6 Hybrid</p>
+                    <h4 class="text-3xl font-black italic uppercase">296 GTB</h4>
+                    <p class="text-sm opacity-70 mt-2">Starting at $322,000</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<footer class="bg-background-dark border-t border-white/5 pt-24 pb-12">
-    <div class="max-w-7xl mx-auto px-6 text-center reveal">
-        <h2 class="text-3xl font-extrabold tracking-tighter uppercase italic mb-8">Ferrari</h2>
-        <div class="flex justify-center gap-8 mb-16 text-[10px] font-bold tracking-widest text-slate-500 uppercase">
-            <a href="models.html" class="hover:text-primary transition-colors">Inventory</a>
-            <a href="locator.html" class="hover:text-primary transition-colors">Locator</a>
-            <a href="checkout.html" class="hover:text-primary transition-colors">Financing</a>
-        </div>
-        <p class="text-[10px] text-slate-700 tracking-[0.3em]">© 2026 FERRARI S.P.A. ALL RIGHTS RESERVED.</p>
-    </div>
-</footer>
-
 <script>
     const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('bg-background-dark/95', 'backdrop-blur-lg', 'h-16');
-            header.classList.remove('bg-transparent', 'h-20');
-        } else {
-            header.classList.remove('bg-background-dark/95', 'backdrop-blur-lg', 'h-16');
-            header.classList.add('bg-transparent', 'h-20');
-        }
+        if (window.scrollY > 100) { header.classList.add('bg-background-dark/95', 'h-16'); }
+        else { header.classList.remove('bg-background-dark/95', 'h-16'); }
     });
-
     const carousel = document.getElementById('model-carousel');
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    nextBtn.addEventListener('click', () => carousel.scrollBy({ left: 432, behavior: 'smooth' }));
-    prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -432, behavior: 'smooth' }));
-
+    document.getElementById('nextBtn').addEventListener('click', () => carousel.scrollBy({ left: 432, behavior: 'smooth' }));
+    document.getElementById('prevBtn').addEventListener('click', () => carousel.scrollBy({ left: -432, behavior: 'smooth' }));
     const reveal = () => {
-        const reveals = document.querySelectorAll('.reveal');
-        reveals.forEach(el => {
-            const windowHeight = window.innerHeight;
-            const elementTop = el.getBoundingClientRect().top;
-            if (elementTop < windowHeight - 150) el.classList.add('active');
+        document.querySelectorAll('.reveal').forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 150) el.classList.add('active');
         });
     };
     window.addEventListener('scroll', reveal);
