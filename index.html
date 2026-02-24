@@ -29,9 +29,59 @@
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Modal Layout */
+        #modal-container {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(15px);
+        }
+        #modal-container.active { display: flex; }
+
+        .side-panel {
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .active .side-panel { transform: translateX(0); }
     </style>
 </head>
 <body class="bg-background-dark text-slate-100 font-display overflow-x-hidden">
+
+<div id="modal-container" class="items-stretch justify-end">
+    <div class="flex-1 flex items-center justify-center p-6 md:p-12 cursor-zoom-out" onclick="closeModal()">
+        <img id="modal-img" src="" class="max-w-full max-h-[80vh] object-contain rounded-sm shadow-2xl transition-all duration-500">
+    </div>
+
+    <div class="side-panel w-full md:w-[450px] bg-surface-dark border-l border-white/10 p-8 md:p-12 flex flex-col justify-center relative">
+        <button onclick="closeModal()" class="absolute top-8 right-8 text-white/50 hover:text-primary transition-colors">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+
+        <div class="space-y-8">
+            <div>
+                <span id="modal-tag" class="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">Engine</span>
+                <h2 id="modal-title" class="text-5xl md:text-6xl font-black italic uppercase leading-none tracking-tighter mb-4 text-white">Model</h2>
+                <div class="h-1 w-20 bg-primary"></div>
+            </div>
+
+            <p class="text-slate-400 text-lg font-light leading-relaxed">
+                A expressão máxima da performance italiana. Engenharia de precisão combinada com a paixão das pistas adaptada para a excelência das ruas.
+            </p>
+
+            <div class="pt-8 border-t border-white/5">
+                <p class="text-[10px] uppercase text-white/40 tracking-widest mb-1">Starting at</p>
+                <p id="modal-price" class="text-4xl font-bold italic text-white">$000,000</p>
+            </div>
+
+            <button class="w-full bg-primary hover:bg-red-700 text-white text-xs font-black uppercase tracking-[0.2em] py-5 rounded-sm transition-all mt-10">
+                Configure Yours
+            </button>
+        </div>
+    </div>
+</div>
 
 <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-white/5 bg-transparent">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -40,11 +90,11 @@
             <h2 class="text-xl font-extrabold tracking-tighter uppercase italic">Ferrari</h2>
         </div>
         <nav class="hidden md:flex items-center gap-10">
-            <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="models.html">Models</a>
-            <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="locator.html">Locator</a>
-            <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="checkout.html">Financing</a>
+            <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="#">Models</a>
+            <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="#">Locator</a>
+            <a class="text-[10px] font-bold tracking-widest uppercase hover:text-primary transition-colors" href="#">Financing</a>
         </nav>
-        <a href="checkout.html" class="bg-primary hover:bg-red-700 text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-3 rounded-sm transition-all">Configure Yours</a>
+        <a href="#" class="bg-primary hover:bg-red-700 text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-3 rounded-sm transition-all">Configure Yours</a>
     </div>
 </header>
 
@@ -57,7 +107,7 @@
         <div class="max-w-3xl space-y-6">
             <div class="flex items-center gap-4"><span class="h-[2px] w-12 bg-primary"></span><span class="text-primary text-[10px] font-bold tracking-[0.4em] uppercase">V12 Naturally Aspirated</span></div>
             <h1 class="text-6xl md:text-9xl font-extrabold leading-[0.85] tracking-tighter text-white uppercase italic">The Essence <br/> of <span class="text-primary">Speed</span></h1>
-            <p class="text-lg text-slate-400 max-w-xl font-light">Italian engineering at its peak. Explore our collection below.</p>
+            <p class="text-lg text-slate-400 max-w-xl font-light">Italian engineering at its peak. Clique nas máquinas para ampliar a visão.</p>
         </div>
     </div>
 </section>
@@ -69,45 +119,55 @@
             <h2 class="text-5xl font-bold tracking-tighter text-white italic uppercase">Current Stable</h2>
         </div>
         <div class="flex gap-2">
-            <button id="prevBtn" class="size-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
-            <button id="nextBtn" class="size-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
+            <button id="prevBtn" class="size-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all text-white"><span class="material-symbols-outlined">chevron_left</span></button>
+            <button id="nextBtn" class="size-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all text-white"><span class="material-symbols-outlined">chevron_right</span></button>
         </div>
     </div>
 
     <div id="model-carousel" class="flex overflow-x-auto hide-scrollbar px-6 gap-8 snap-x scroll-smooth">
-        <div class="min-w-[400px] snap-start group cursor-pointer reveal" onclick="window.location.href='checkout.html?model=SF90%20Stradale&price=511000'">
+        
+        <div class="min-w-[400px] snap-start group cursor-zoom-in reveal" onclick="openModal('./images/Models/starter/SF90.jpeg', 'SF90 Stradale', 'Hybrid PHEV', '$511,000')">
             <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark">
-                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/Models/starter/WhatsApp Image 2026-02-23 at 01.16.23.jpeg">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                <div class="absolute bottom-8 left-8 text-white">
-                    <p class="text-[10px] uppercase text-primary font-bold">Hybrid</p>
-                    <h4 class="text-3xl font-black italic uppercase">SF90 Stradale</h4>
-                    <p class="text-sm opacity-70 mt-2">Starting at $511,000</p>
-                </div>
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/Models/starter/SF90.jpeg">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
             </div>
         </div>
-        <div class="min-w-[400px] snap-start group cursor-pointer reveal" onclick="window.location.href='checkout.html?model=Purosangue%20V12&price=398000'">
+
+        <div class="min-w-[400px] snap-start group cursor-zoom-in reveal" onclick="openModal('images/Models/starter/Ferrari-Roma.png', 'Roma', 'V8 Grand Tourer', '$247,000')">
             <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark">
-                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1678912808225-8e474ca0472f?auto=format&fit=crop&q=80&w=800">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                <div class="absolute bottom-8 left-8 text-white">
-                    <p class="text-[10px] uppercase text-primary font-bold">SUV</p>
-                    <h4 class="text-3xl font-black italic uppercase">Purosangue</h4>
-                    <p class="text-sm opacity-70 mt-2">Starting at $398,000</p>
-                </div>
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/Models/starter/Ferrari-Roma.png">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
             </div>
         </div>
-        <div class="min-w-[400px] snap-start group cursor-pointer reveal" onclick="window.location.href='checkout.html?model=296%20GTB&price=322000'">
+
+        <div class="min-w-[400px] snap-start group cursor-zoom-in reveal" onclick="openModal('images/Models/starter/488GTB.png', '488 GTB', 'V8 Turbo', '$285,000')">
             <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark">
-                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1656447816035-71578e8574fc?auto=format&fit=crop&q=80&w=800">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                <div class="absolute bottom-8 left-8 text-white">
-                    <p class="text-[10px] uppercase text-primary font-bold">V6 Hybrid</p>
-                    <h4 class="text-3xl font-black italic uppercase">296 GTB</h4>
-                    <p class="text-sm opacity-70 mt-2">Starting at $322,000</p>
-                </div>
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/Models/starter/488GTB.png">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
             </div>
         </div>
+
+        <div class="min-w-[400px] snap-start group cursor-zoom-in reveal" onclick="openModal('images/Models/starter/812.png', '812 Superfast', 'V12 Monster', '$335,000')">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/Models/starter/812.png">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+            </div>
+        </div>
+
+        <div class="min-w-[400px] snap-start group cursor-zoom-in reveal" onclick="openModal('images/Models/starter/purosangue.png', 'Purosangue', 'V12 SUV', '$398,000')">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/Models/starter/purosangue.png">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+            </div>
+        </div>
+
+        <div class="min-w-[400px] snap-start group cursor-zoom-in reveal" onclick="openModal('images/Models/starter/SF90STRADALE.png', 'SF90 Spider', 'Hybrid Convertible', '$570,000')">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-accent-dark">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/Models/starter/SF90STRADALE.png">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -117,9 +177,31 @@
         if (window.scrollY > 100) { header.classList.add('bg-background-dark/95', 'h-16'); }
         else { header.classList.remove('bg-background-dark/95', 'h-16'); }
     });
+
     const carousel = document.getElementById('model-carousel');
     document.getElementById('nextBtn').addEventListener('click', () => carousel.scrollBy({ left: 432, behavior: 'smooth' }));
     document.getElementById('prevBtn').addEventListener('click', () => carousel.scrollBy({ left: -432, behavior: 'smooth' }));
+
+    const modal = document.getElementById('modal-container');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalTag = document.getElementById('modal-tag');
+    const modalPrice = document.getElementById('modal-price');
+
+    function openModal(imgSrc, title, tag, price) {
+        modalImg.src = imgSrc;
+        modalTitle.innerText = title;
+        modalTag.innerText = tag;
+        modalPrice.innerText = price;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
     const reveal = () => {
         document.querySelectorAll('.reveal').forEach(el => {
             if (el.getBoundingClientRect().top < window.innerHeight - 150) el.classList.add('active');
