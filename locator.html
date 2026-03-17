@@ -3,135 +3,115 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Ferrari | Official Network Locator</title>
+    <title>Ferrari | Global Network Locator</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
     <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
-                    colors: {
-                        "primary": "#c20a0a",
-                        "background-dark": "#0a0a0a", /* Sincronizado com a Home */
-                        "surface-dark": "#161616",
-                        "accent-dark": "#1f1f1f",
-                    },
+                    colors: { "primary": "#c20a0a", "background-dark": "#050505", "surface-dark": "#111111" },
                     fontFamily: { "display": ["Manrope", "sans-serif"] },
                 },
             },
         }
     </script>
     <style>
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #0a0a0a; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #c20a0a; border-radius: 10px; }
-        .active-dealer { border-color: #c20a0a !important; background: rgba(194, 10, 10, 0.1) !important; }
+        .custom-scrollbar::-webkit-scrollbar { width: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #c20a0a; }
+        .active-dealer { border-left: 4px solid #c20a0a !important; background: #1a1a1a !important; }
+        .dealer-image { width: 65px; height: 65px; background-size: cover; background-position: center; border-radius: 2px; }
+        
+        /* Ajuste da logo no marcador */
+        .marker-logo {
+            width: 40px;
+            height: 55px;
+            object-fit: contain;
+            filter: brightness(0) invert(1); /* Deixa a logo branca para destacar no vermelho */
+        }
     </style>
 </head>
 <body class="bg-background-dark font-display text-slate-100 antialiased overflow-hidden">
-<div class="flex h-screen w-full flex-col">
 
-    <header class="flex items-center justify-between border-b border-white/5 bg-background-dark px-6 py-4 lg:px-12 shrink-0 z-50">
-        <div class="flex items-center gap-3">
-            <a href="index.html" class="text-primary flex items-center gap-2">
-                <span class="material-symbols-outlined text-3xl">stat_3</span>
-                <h1 class="text-xl font-extrabold uppercase tracking-widest italic">Ferrari</h1>
-            </a>
-        </div>
-        <nav class="hidden md:flex items-center gap-10">
-            <a class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="models.html">Models</a>
-            <a class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="index.html#tech">Engineering</a>
-            <a class="text-[10px] font-bold uppercase tracking-widest text-white border-b border-primary pb-1" href="#">Locator</a>
-        </nav>
+<div class="flex h-screen w-full flex-col">
+    <header class="flex items-center justify-between border-b border-white/5 bg-background-dark px-8 py-4 z-50">
         <div class="flex items-center gap-4">
-            <button class="bg-primary hover:bg-red-700 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-2.5 rounded-sm transition-all">
-                Owner Login
-            </button>
+            <img src="https://www.ferrari.com/favicon.ico" class="w-8 h-8 brightness-0 invert" alt="Ferrari Logo">
+            <h1 class="text-xl font-black uppercase tracking-[0.4em] italic text-primary">Ferrari</h1>
         </div>
+        <button class="bg-white text-black text-[9px] font-extrabold px-6 py-2 uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
+            MyFerrari Login
+        </button>
     </header>
 
     <main class="flex flex-1 overflow-hidden">
-        <aside class="w-full max-w-md bg-surface-dark border-r border-white/5 flex flex-col z-40 shadow-2xl">
-            <div class="p-6 border-b border-white/5 space-y-4">
-                <div class="space-y-1">
-                    <h2 class="text-lg font-bold text-white uppercase tracking-tight">Find a Dealer</h2>
-                    <p class="text-xs text-slate-500 font-medium">Explore official showrooms worldwide</p>
+        <aside class="w-full max-w-[380px] bg-surface-dark border-r border-white/5 flex flex-col z-40 shadow-2xl">
+            <div class="p-6 border-b border-white/5">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="https://www.ferrari.com/favicon.ico" class="w-5 brightness-0 invert opacity-50" alt="icon">
+                    <h2 class="text-xl font-extrabold uppercase italic tracking-tighter">Global Network</h2>
                 </div>
-                <div class="relative group">
-                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors">search</span>
-                    <input class="w-full bg-background-dark border border-white/10 rounded-lg py-3 pl-11 pr-4 text-sm text-white placeholder:text-slate-600 focus:ring-1 focus:ring-primary focus:border-primary transition-all" placeholder="Enter City or Country" type="text"/>
-                </div>
-                <div class="flex gap-2">
-                    <button class="flex-1 flex items-center justify-center gap-2 bg-accent-dark hover:bg-primary/20 text-slate-300 text-[10px] font-bold uppercase py-2 rounded-lg border border-white/5 transition-all">
-                        <span class="material-symbols-outlined text-sm">my_location</span> Locate Me
-                    </button>
+                <div class="relative">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">search</span>
+                    <input class="w-full bg-black border border-white/10 py-3 pl-10 pr-4 text-[10px] text-white outline-none focus:border-primary uppercase tracking-widest" placeholder="Search City..."/>
                 </div>
             </div>
 
-            <div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4">
-                <div class="dealer-item p-5 rounded-xl bg-accent-dark border border-white/5 transition-all cursor-pointer hover:border-primary/50 group active-dealer" data-city="maranello">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <span class="bg-primary text-[8px] font-bold uppercase px-2 py-0.5 rounded text-white tracking-widest">Headquarters</span>
-                            <h3 class="text-base font-bold text-white mt-1 group-hover:text-primary transition-colors">Ferrari Maranello</h3>
-                            <p class="text-xs text-slate-400">Via Abetone Inferiore, 4, Italy</p>
-                        </div>
-                        <span class="flex items-center gap-1 text-[10px] text-emerald-500 font-bold uppercase">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Open
-                        </span>
+            <div class="flex-1 overflow-y-auto custom-scrollbar p-2 space-y-2">
+                <div class="dealer-item p-4 border border-white/5 flex gap-4 cursor-pointer active-dealer transition-all" data-x="51" data-y="38" data-name="Maranello">
+                    <div class="dealer-image shrink-0 shadow-lg" style="background-image: url('https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&q=60&w=150')"></div>
+                    <div>
+                        <h3 class="text-xs font-black uppercase tracking-wider text-white">Ferrari Maranello</h3>
+                        <p class="text-[10px] text-slate-500 mt-1 uppercase">Italy</p>
                     </div>
                 </div>
 
-                <div class="dealer-item p-5 rounded-xl bg-accent-dark border border-white/5 transition-all cursor-pointer hover:border-primary/50 group" data-city="new york">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-base font-bold text-slate-200 group-hover:text-primary transition-colors">Ferrari New York</h3>
-                            <p class="text-xs text-slate-500">410 Park Ave, New York, NY</p>
-                        </div>
-                        <span class="flex items-center gap-1 text-[10px] text-emerald-500 font-bold uppercase">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Open
-                        </span>
+                <div class="dealer-item p-4 border border-white/5 flex gap-4 cursor-pointer transition-all" data-x="28" data-y="37" data-name="New York">
+                    <div class="dealer-image shrink-0 shadow-lg" style="background-image: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=60&w=150')"></div>
+                    <div>
+                        <h3 class="text-xs font-black uppercase tracking-wider text-white">Ferrari New York</h3>
+                        <p class="text-[10px] text-slate-500 mt-1 uppercase">USA</p>
                     </div>
                 </div>
 
-                <div class="dealer-item p-5 rounded-xl bg-accent-dark border border-white/5 transition-all cursor-pointer hover:border-primary/50 group" data-city="tokyo">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-base font-bold text-slate-200 group-hover:text-primary transition-colors">Ferrari Tokyo</h3>
-                            <p class="text-xs text-slate-500">Minato City, Tokyo, Japan</p>
-                        </div>
-                        <span class="flex items-center gap-1 text-[10px] text-slate-500 font-bold uppercase">
-                            <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span> Closed
-                        </span>
+                <div class="dealer-item p-4 border border-white/5 flex gap-4 cursor-pointer transition-all" data-x="34" data-y="75" data-name="São Paulo">
+                    <div class="dealer-image shrink-0 shadow-lg" style="background-image: url('https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=60&w=150')"></div>
+                    <div>
+                        <h3 class="text-xs font-black uppercase tracking-wider text-white">Ferrari São Paulo</h3>
+                        <p class="text-[10px] text-slate-500 mt-1 uppercase">Brazil</p>
                     </div>
                 </div>
             </div>
         </aside>
 
-        <section class="flex-1 relative bg-black">
-            <div class="absolute inset-0 grayscale contrast-[1.2] brightness-50 opacity-40">
-                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=2000" alt="World Map Dark"/>
-            </div>
+        <section class="flex-1 relative bg-black overflow-hidden">
+            <img class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale brightness-50" 
+                 src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=2000" alt="World Map"/>
             
-            <div class="absolute inset-0 bg-gradient-to-r from-background-dark/90 via-transparent to-transparent pointer-events-none"></div>
-
-            <div id="mapMarker" class="absolute top-[45%] left-[48%] group cursor-pointer z-10 transition-all duration-700">
-                <div class="relative flex items-center justify-center">
-                    <div class="absolute w-12 h-12 bg-primary/30 rounded-full animate-ping"></div>
-                    <div class="relative bg-primary p-2 rounded-full border-2 border-white shadow-[0_0_20px_rgba(194,10,10,0.8)]">
-                        <span class="material-symbols-outlined text-white text-base">location_on</span>
+            <div id="mapMarker" class="absolute top-[38%] left-[51%] z-30 transition-all duration-700 ease-out -translate-x-1/2 -translate-y-full">
+                <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 bg-primary/20 rounded-full animate-ping absolute top-0"></div>
+                    
+                    <div class="relative bg-white p-[2px] shadow-[0_0_40px_rgba(194,10,10,0.7)] border border-primary">
+                        <div class="bg-primary px-4 py-4 flex flex-col items-center min-w-[110px]">
+                            <img src="./images/icons/ferrari_logo.png" 
+                                 class="marker-logo mb-3" alt="Ferrari Logo">
+                            
+                            <span id="markerLabel" class="text-[11px] font-black text-white uppercase tracking-tighter border-t border-white/20 pt-2 w-full text-center">Maranello</span>
+                        </div>
                     </div>
+                    <div class="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[14px] border-t-white"></div>
                 </div>
             </div>
 
-            <div class="absolute right-6 top-6 flex flex-col gap-2">
-                <button class="size-10 bg-surface-dark border border-white/10 rounded flex items-center justify-center hover:bg-primary transition-all">
-                    <span class="material-symbols-outlined">add</span>
+            <div class="absolute right-8 bottom-8 flex flex-col gap-2">
+                <button class="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary transition-all">
+                    <span class="material-symbols-outlined text-white">add</span>
                 </button>
-                <button class="size-10 bg-surface-dark border border-white/10 rounded flex items-center justify-center hover:bg-primary transition-all">
-                    <span class="material-symbols-outlined">remove</span>
+                <button class="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary transition-all">
+                    <span class="material-symbols-outlined text-white">remove</span>
                 </button>
             </div>
         </section>
@@ -139,25 +119,25 @@
 </div>
 
 <script>
-    // Lógica para simular seleção no mapa
     const dealers = document.querySelectorAll('.dealer-item');
     const marker = document.getElementById('mapMarker');
+    const markerLabel = document.getElementById('markerLabel');
 
     dealers.forEach(dealer => {
         dealer.addEventListener('click', () => {
-            // Remove classe ativa de todos
             dealers.forEach(d => d.classList.remove('active-dealer'));
-            // Adiciona ao clicado
             dealer.classList.add('active-dealer');
 
-            // Simula movimento do marcador (valores aleatórios para efeito visual)
-            const randomTop = Math.floor(Math.random() * 60) + 20;
-            const randomLeft = Math.floor(Math.random() * 60) + 20;
-            
-            marker.style.top = `${randomTop}%`;
-            marker.style.left = `${randomLeft}%`;
+            const x = dealer.getAttribute('data-x');
+            const y = dealer.getAttribute('data-y');
+            const name = dealer.getAttribute('data-name');
+
+            marker.style.left = x + '%';
+            marker.style.top = y + '%';
+            markerLabel.innerText = name;
         });
     });
 </script>
+
 </body>
 </html>
